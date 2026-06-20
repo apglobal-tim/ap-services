@@ -4,114 +4,84 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AP Global Concepts — Service Overviews</title>
+<title>AP Global Concepts — Where are you located?</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --dark:#142D50; --dark2:#1B2A3B; --gold:#E8C24E; --gold-soft:rgba(232,194,78,0.75);
-    --cream:#F5F7FA; --text:#1E2D3D; --white:#fff;
-  }
+  :root{ --dark:#142D50; --gold:#E8C24E; --gold-soft:rgba(232,194,78,0.75); --cream:#F5F7FA; --text:#1E2D3D; --white:#fff; }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Nunito Sans',sans-serif;background:var(--cream);color:var(--text)}
+  body{font-family:'Nunito Sans',sans-serif;background:var(--cream);color:var(--text);display:flex;flex-direction:column;min-height:100vh}
 
-  /* HEADER */
-  .header{background:var(--dark);padding:42px 20px 30px;text-align:center}
-  .header::after{content:'';display:block;height:4px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-top:26px}
-  .logo-img{width:118px;height:auto;display:block;margin:0 auto 14px;filter:drop-shadow(0 2px 10px rgba(0,0,0,0.45))}
-  .header-sub{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:5px;color:var(--gold-soft);text-transform:uppercase}
+  .header{background:var(--dark);padding:40px 20px 28px;text-align:center}
+  .header::after{content:'';display:block;height:4px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-top:24px}
+  .logo-img{width:112px;height:auto;display:block;margin:0 auto 12px;filter:drop-shadow(0 2px 10px rgba(0,0,0,0.45))}
+  .header-sub{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:5px;color:var(--gold-soft);text-transform:uppercase}
 
-  /* CONTACT BAR */
-  .contact-bar{background:var(--gold);padding:11px 20px;display:flex;justify-content:center;align-items:center;gap:26px;flex-wrap:wrap}
-  .contact-bar a{color:var(--dark);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.5px;display:flex;align-items:center;gap:6px}
-  .contact-bar a:hover{text-decoration:underline}
-
-  /* HERO */
-  .hero{background:var(--dark);padding:50px 20px 58px;text-align:center}
-  .label{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:18px}
+  .hero{background:var(--dark);padding:18px 20px 56px;text-align:center}
+  .label{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:16px}
   .label span{font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;font-weight:700}
-  .label::before,.label::after{content:'';flex:1;max-width:70px;height:1px;background:var(--gold);opacity:0.6}
-  .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,6vw,50px);font-weight:300;color:var(--white);line-height:1.18;margin-bottom:14px}
+  .label::before,.label::after{content:'';flex:1;max-width:64px;height:1px;background:var(--gold);opacity:0.6}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5.5vw,46px);font-weight:300;color:var(--white);line-height:1.15}
   .hero h1 em{font-style:italic;color:var(--gold)}
-  .hero p{font-size:13px;color:rgba(255,255,255,0.7);max-width:520px;margin:0 auto;line-height:1.8;font-weight:300}
+  .hero p{font-size:13px;color:rgba(255,255,255,0.65);margin-top:12px;font-weight:300}
 
-  /* CARDS */
-  .wrap{max-width:880px;margin:0 auto;padding:46px 20px 10px}
-  .group-label{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--dark);text-align:center;margin:8px 0 4px}
-  .group-rule{width:46px;height:2px;background:var(--gold);margin:0 auto 22px}
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:40px}
-  .card{display:block;background:var(--white);border-top:3px solid var(--gold);box-shadow:0 4px 26px rgba(20,45,80,0.10);padding:26px 26px 24px;text-decoration:none;color:var(--text);transition:transform 0.18s ease,box-shadow 0.18s ease;position:relative}
-  .card:hover{transform:translateY(-3px);box-shadow:0 10px 34px rgba(20,45,80,0.18)}
-  .card .lang{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
-  .card .name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--dark);line-height:1.25}
-  .card .go{margin-top:14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--dark);font-weight:700}
+  .wrap{max-width:760px;margin:-34px auto 0;padding:0 20px;flex:1;width:100%}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{display:block;background:var(--white);border-top:3px solid var(--gold);box-shadow:0 6px 30px rgba(20,45,80,0.14);padding:30px 26px 26px;text-decoration:none;color:var(--text);transition:transform 0.18s ease,box-shadow 0.18s ease;text-align:center}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(20,45,80,0.22)}
+  .flag{font-size:34px;line-height:1;margin-bottom:12px}
+  .card .name{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:600;color:var(--dark);line-height:1.2}
+  .card .cur{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:7px}
+  .card .go{margin-top:16px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--dark);font-weight:700}
   .card .go span{color:var(--gold)}
 
-  /* FOOTER */
-  .footer{background:var(--dark);padding:42px 20px 30px;text-align:center;margin-top:24px}
-  .footer::before{content:'';display:block;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-bottom:30px;opacity:0.6}
-  .footer-logo{width:74px;margin:0 auto 16px;display:block;opacity:0.92}
-  .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:rgba(255,255,255,0.72);margin-bottom:22px}
-  .social{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:22px}
-  .social a{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border:1px solid var(--gold-soft);color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;transition:all 0.2s}
-  .social a:hover{background:var(--gold);color:var(--dark)}
-  .fcontact{font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:1px}
-  .fcontact a{color:var(--gold-soft);text-decoration:none}
-  .copyright{margin-top:20px;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.28);text-transform:uppercase}
+  .catering-link{text-align:center;margin:30px 0 10px;font-size:13px;color:#5a6b7d}
+  .catering-link a{color:var(--dark);font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px}
+  .catering-link a:hover{color:var(--gold)}
 
-  @media (max-width:620px){.grid{grid-template-columns:1fr}}
+  .footer{background:var(--dark);padding:34px 20px 26px;text-align:center;margin-top:40px}
+  .footer::before{content:'';display:block;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-bottom:26px;opacity:0.6}
+  .footer-logo{width:66px;margin:0 auto 14px;display:block;opacity:0.92}
+  .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.72);margin-bottom:18px}
+  .social{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+  .social a{display:inline-flex;align-items:center;padding:8px 16px;border:1px solid var(--gold-soft);color:var(--gold);text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;transition:all 0.2s}
+  .social a:hover{background:var(--gold);color:var(--dark)}
+  .fcontact{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px}
+  .fcontact a{color:var(--gold-soft);text-decoration:none}
+  .copyright{margin-top:16px;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.28);text-transform:uppercase}
+
+  @media (max-width:560px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <header class="header">
   <img class="logo-img" src="logo.png" alt="AP Global Concepts">
-  <p class="header-sub">Based in Colorado</p>
+  <p class="header-sub">AP Global Concepts</p>
 </header>
 
-<div class="contact-bar">
-  <a href="tel:7209605341"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>720-960-5341</a>
-  <a href="mailto:alberto@apeventplanning.com"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>alberto@apeventplanning.com</a>
-  <a href="https://www.apeventplanning.com/" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>apeventplanning.com</a>
-</div>
-
 <section class="hero">
-  <div class="label"><span>AP Global Concepts</span></div>
-  <h1>Explore our <em>services.</em></h1>
-  <p>Professional event planning, coordination, and catering for weddings, quinceañeras, and corporate events. Browse a general overview of our services and pricing below.</p>
+  <div class="label"><span>Eventos &middot; Catering &middot; Planeación</span></div>
+  <h1>Where are you located?<br><em>¿Dónde te encuentras?</em></h1>
+  <p>Choose your region to see services and pricing &middot; Elige tu región para ver servicios y precios</p>
 </section>
 
 <div class="wrap">
-
-  <p class="group-label">Event Planning &amp; Coordination</p>
-  <div class="group-rule"></div>
   <div class="grid">
     <a class="card" href="services-en.html">
-      <div class="lang">English</div>
-      <div class="name">Event Planning &amp; Coordination</div>
-      <div class="go">View overview <span>&rarr;</span></div>
+      <div class="flag">&#127482;&#127480;</div>
+      <div class="name">United States</div>
+      <div class="cur">Pricing in USD</div>
+      <div class="go">View services <span>&rarr;</span></div>
     </a>
-    <a class="card" href="services-es.html">
-      <div class="lang">Español</div>
-      <div class="name">Planeación y Coordinación</div>
-      <div class="go">Ver resumen <span>&rarr;</span></div>
-    </a>
-  </div>
-
-  <p class="group-label">Catering</p>
-  <div class="group-rule"></div>
-  <div class="grid">
-    <a class="card" href="catering-en.html">
-      <div class="lang">English</div>
-      <div class="name">Catering Services</div>
-      <div class="go">View overview <span>&rarr;</span></div>
-    </a>
-    <a class="card" href="catering-es.html">
-      <div class="lang">Español</div>
-      <div class="name">Servicios de Catering</div>
-      <div class="go">Ver resumen <span>&rarr;</span></div>
+    <a class="card" href="services-mx.html">
+      <div class="flag">&#127474;&#127485;</div>
+      <div class="name">México</div>
+      <div class="cur">Precios en MXN</div>
+      <div class="go">Ver servicios <span>&rarr;</span></div>
     </a>
   </div>
 
+  <p class="catering-link">Looking for catering? <a href="catering-en.html">View our menu</a> &middot; ¿Buscas catering? <a href="catering-es.html">Ver menú</a></p>
 </div>
 
 <footer class="footer">
