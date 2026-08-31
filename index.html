@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AP Global Concepts — Where are you located?</title>
+<title>AP Global Concepts — Services &amp; Catering</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{ --dark:#142D50; --gold:#E8C24E; --gold-soft:rgba(232,194,78,0.75); --cream:#F5F7FA; --text:#1E2D3D; --white:#fff; }
   *{margin:0;padding:0;box-sizing:border-box}
+  [hidden]{display:none!important}
   body{font-family:'Nunito Sans',sans-serif;background:var(--cream);color:var(--text);display:flex;flex-direction:column;min-height:100vh}
 
   .header{background:var(--dark);padding:40px 20px 28px;text-align:center}
@@ -26,7 +27,8 @@
 
   .wrap{max-width:760px;margin:-34px auto 0;padding:0 20px;flex:1;width:100%}
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  .card{display:block;background:var(--white);border-top:3px solid var(--gold);box-shadow:0 6px 30px rgba(20,45,80,0.14);padding:30px 26px 26px;text-decoration:none;color:var(--text);transition:transform 0.18s ease,box-shadow 0.18s ease;text-align:center}
+  .cell{display:flex;flex-direction:column}
+  .card{display:block;flex:1;background:var(--white);border-top:3px solid var(--gold);box-shadow:0 6px 30px rgba(20,45,80,0.14);padding:30px 26px 26px;text-decoration:none;color:var(--text);transition:transform 0.18s ease,box-shadow 0.18s ease;text-align:center}
   .card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(20,45,80,0.22)}
   .flag{font-size:34px;line-height:1;margin-bottom:12px}
   .card .name{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:600;color:var(--dark);line-height:1.2}
@@ -34,9 +36,13 @@
   .card .go{margin-top:16px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--dark);font-weight:700}
   .card .go span{color:var(--gold)}
 
-  .catering-link{text-align:center;margin:30px 0 10px;font-size:13px;color:#5a6b7d}
-  .catering-link a{color:var(--dark);font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px}
-  .catering-link a:hover{color:var(--gold)}
+  .alt-lang{text-align:center;margin-top:12px;font-size:12px;color:#5a6b7d}
+  .alt-lang a{color:var(--dark);font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px}
+  .alt-lang a:hover{color:var(--gold)}
+
+  .back-link{text-align:center;margin:30px 0 10px;font-size:13px;color:#5a6b7d}
+  .back-link a{color:var(--dark);font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px}
+  .back-link a:hover{color:var(--gold)}
 
   .footer{background:var(--dark);padding:34px 20px 26px;text-align:center;margin-top:40px}
   .footer::before{content:'';display:block;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-bottom:26px;opacity:0.6}
@@ -61,27 +67,78 @@
 
 <section class="hero">
   <div class="label"><span>Eventos &middot; Catering &middot; Planeación</span></div>
-  <h1>Where are you located?<br><em>¿Dónde te encuentras?</em></h1>
-  <p>Choose your region to see services and pricing &middot; Elige tu región para ver servicios y precios</p>
+  <h1 id="hero-title">Where are you located?<br><em>¿Dónde te encuentras?</em></h1>
+  <p id="hero-sub">Choose your region &middot; Elige tu región</p>
 </section>
 
 <div class="wrap">
-  <div class="grid">
-    <a class="card" href="services-en.html">
-      <div class="flag">&#127482;&#127480;</div>
-      <div class="name">United States</div>
-      <div class="cur">Pricing in USD</div>
-      <div class="go">View services <span>&rarr;</span></div>
-    </a>
-    <a class="card" href="services-mx.html">
-      <div class="flag">&#127474;&#127485;</div>
-      <div class="name">México</div>
-      <div class="cur">Precios en MXN</div>
-      <div class="go">Ver servicios <span>&rarr;</span></div>
-    </a>
+
+  <!-- Step 1 · Location -->
+  <div id="step-location">
+    <div class="grid">
+      <a class="card" href="#us">
+        <div class="flag">&#127482;&#127480;</div>
+        <div class="name">United States</div>
+        <div class="cur">Pricing in USD</div>
+        <div class="go">Choose a service <span>&rarr;</span></div>
+      </a>
+      <a class="card" href="#mx">
+        <div class="flag">&#127474;&#127485;</div>
+        <div class="name">México</div>
+        <div class="cur">Precios en MXN</div>
+        <div class="go">Elige un servicio <span>&rarr;</span></div>
+      </a>
+    </div>
   </div>
 
-  <p class="catering-link">Looking for catering? <a href="catering-en.html">View our menu</a> &middot; ¿Buscas catering? <a href="catering-es.html">Ver menú</a></p>
+  <!-- Step 2 · United States -->
+  <div id="step-us" hidden>
+    <div class="grid">
+      <div class="cell">
+        <a class="card" href="services-en.html">
+          <div class="flag">&#10024;</div>
+          <div class="name">Event Planning</div>
+          <div class="cur">Weddings &middot; XV &middot; Corporate</div>
+          <div class="go">View services <span>&rarr;</span></div>
+        </a>
+        <p class="alt-lang"><a href="services-es.html">También en español &rarr;</a></p>
+      </div>
+      <div class="cell">
+        <a class="card" href="catering-en.html">
+          <div class="flag">&#127869;&#65039;</div>
+          <div class="name">Catering</div>
+          <div class="cur">Menus &amp; Packages</div>
+          <div class="go">View menu <span>&rarr;</span></div>
+        </a>
+        <p class="alt-lang"><a href="catering-es.html">También en español &rarr;</a></p>
+      </div>
+    </div>
+    <p class="back-link"><a href="#">&larr; Change location &middot; Cambiar ubicación</a></p>
+  </div>
+
+  <!-- Step 2 · México -->
+  <div id="step-mx" hidden>
+    <div class="grid">
+      <div class="cell">
+        <a class="card" href="services-mx.html">
+          <div class="flag">&#10024;</div>
+          <div class="name">Planeación de Eventos</div>
+          <div class="cur">Bodas &middot; XV Años &middot; Corporativo</div>
+          <div class="go">Ver servicios <span>&rarr;</span></div>
+        </a>
+      </div>
+      <div class="cell">
+        <a class="card" href="catering-es.html">
+          <div class="flag">&#127869;&#65039;</div>
+          <div class="name">Catering</div>
+          <div class="cur">Menú &middot; Precios en USD</div>
+          <div class="go">Ver menú <span>&rarr;</span></div>
+        </a>
+      </div>
+    </div>
+    <p class="back-link"><a href="#">&larr; Cambiar ubicación &middot; Change location</a></p>
+  </div>
+
 </div>
 
 <footer class="footer">
@@ -96,6 +153,41 @@
   <p class="fcontact"><a href="mailto:alberto@apeventplanning.com">alberto@apeventplanning.com</a> &nbsp;&middot;&nbsp; Colorado, USA</p>
   <p class="copyright">&copy; 2026 AP Global Concepts</p>
 </footer>
+
+<script>
+(function(){
+  var heroTitle = document.getElementById('hero-title');
+  var heroSub = document.getElementById('hero-sub');
+  var steps = {
+    location: document.getElementById('step-location'),
+    us: document.getElementById('step-us'),
+    mx: document.getElementById('step-mx')
+  };
+  var hero = {
+    location: {
+      title: 'Where are you located?<br><em>¿Dónde te encuentras?</em>',
+      sub: 'Choose your region &middot; Elige tu región'
+    },
+    us: {
+      title: 'What are you looking for?<br><em>¿Qué estás buscando?</em>',
+      sub: 'Event planning or catering &middot; Planeación de eventos o catering'
+    },
+    mx: {
+      title: '¿Qué estás buscando?<br><em>What are you looking for?</em>',
+      sub: 'Planeación de eventos o catering &middot; Event planning or catering'
+    }
+  };
+  function render(){
+    var h = window.location.hash.replace('#','');
+    var step = (h === 'us' || h === 'mx') ? h : 'location';
+    for (var k in steps) steps[k].hidden = (k !== step);
+    heroTitle.innerHTML = hero[step].title;
+    heroSub.innerHTML = hero[step].sub;
+  }
+  window.addEventListener('hashchange', render);
+  render();
+})();
+</script>
 
 </body>
 </html>
